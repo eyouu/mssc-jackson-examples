@@ -12,14 +12,11 @@ import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
-/**
- * Created by jt on 2019-04-20.
- */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class BeerDto {
+public class BeerDTO {
 
     @Null
     private UUID id;
