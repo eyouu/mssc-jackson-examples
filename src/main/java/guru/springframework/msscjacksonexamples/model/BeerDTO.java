@@ -1,5 +1,7 @@
 package guru.springframework.msscjacksonexamples.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,6 +20,7 @@ import java.util.UUID;
 @Builder
 public class BeerDTO {
 
+    @JsonProperty("beerId") // during serialization/deserialization this field will have this name.
     @Null
     private UUID id;
 
@@ -30,7 +33,10 @@ public class BeerDTO {
     @Positive
     private Long upc;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING) // now this field will be serialized as String type.
     private BigDecimal price;
+
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH", shape = JsonFormat.Shape.STRING)
     private OffsetDateTime createdDate;
     private OffsetDateTime lastUpdatedDate;
 }

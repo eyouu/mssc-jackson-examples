@@ -5,11 +5,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.json.JsonTest;
+import org.springframework.test.context.ActiveProfiles;
 
+@ActiveProfiles("kebab")
 @JsonTest
-class BeerDTOTest extends BaseTest {
+// kebab case example: beer-name
+class BeerDTOKebabTest extends BaseTest {
 
-    private static final String TEST_JSON = "{\"beerId\":\"8893caf8-bf06-48d0-9eaf-c10dedb18d71\",\"beerName\":\"beerName\",\"beerStyle\":\"Ale\",\"upc\":123124,\"price\":12.99,\"createdDate\":\"2021-12-05T15:59:50.9572453+02:00\",\"lastUpdatedDate\":\"2021-12-05T15:59:50.9582424+02:00\"}";
+    private static final String TEST_JSON = "{\"id\":\"8893caf8-bf06-48d0-9eaf-c10dedb18d71\",\"beerName\":\"beerName\",\"beerStyle\":\"Ale\",\"upc\":123124,\"price\":12.99,\"createdDate\":\"2021-12-05T15:59:50.9572453+02:00\",\"lastUpdatedDate\":\"2021-12-05T15:59:50.9582424+02:00\"}";
 
     @Autowired
     private ObjectMapper objectMapper;
